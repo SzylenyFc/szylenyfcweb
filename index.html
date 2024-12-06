@@ -28,10 +28,10 @@
             background: #e0e0e0;
         }
 
-        /* Pasek nawigacyjny przesunięty na prawą stronę */
+        /* Pasek nawigacyjny */
         nav {
             display: flex;
-            justify-content: flex-end;  /* Wyrównanie do prawej */
+            justify-content: flex-start;  /* Linki po lewej stronie */
             background: #000;
             padding: 10px 0;
             position: sticky;
@@ -59,7 +59,7 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: row;
-                justify-content: flex-end;  /* Wyrównanie do prawej na urządzeniach mobilnych */
+                justify-content: flex-start;  /* Linki po lewej stronie */
                 padding: 10px 0;
                 width: 100%;
                 box-sizing: border-box;
