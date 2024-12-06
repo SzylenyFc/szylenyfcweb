@@ -17,6 +17,14 @@
             background: #ffffcc; /* Jasnożółte tło */
             color: #ffeb3b; /* Żółty kolor tekstu */
             overflow-x: hidden;
+            display: flex; /* Flexbox na body */
+            flex-direction: column; /* Układ w kolumnie */
+            min-height: 100vh; /* Minimalna wysokość na 100% okna */
+        }
+
+        /* Główna zawartość strony */
+        main {
+            flex: 1; /* Elastyczna przestrzeń dla głównej zawartości */
         }
 
         /* Tło obrazu */
@@ -25,7 +33,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%; /* Dopasowanie do widocznego obszaru */
+            width: 100%;
             height: 100%;
             background: url('tło.png') no-repeat center center;
             background-size: cover; /* Ustawienie tła na pełne pokrycie */
@@ -67,7 +75,6 @@
             z-index: 1000;
         }
 
-        /* Zwiększenie rozmiaru logo na ekranie ładowania */
         #loader img {
             width: 250px; /* Większe logo */
             height: auto;
@@ -75,7 +82,6 @@
             border: none; /* Usunięcie obramowania */
         }
 
-        /* Żółte kółko animowane */
         .circle {
             width: 80px; /* Większe kółko */
             height: 80px;
@@ -96,7 +102,6 @@
             }
         }
 
-        /* Po załadowaniu ukrycie loadera */
         body.loaded #loader {
             display: none;
         }
@@ -158,33 +163,32 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Powiększenie czcionki dla nagłówków */
         .hero h2 {
             font-family: 'Archivo Black', sans-serif;
-            font-size: 3em; /* Zwiększony rozmiar czcionki */
-            color: #ffeb3b; /* Żółty kolor */
+            font-size: 3em;
+            color: #ffeb3b;
             margin-bottom: 10px;
         }
 
         .hero h3 {
             font-family: 'Archivo Black', sans-serif;
-            font-size: 2em; /* Zwiększony rozmiar czcionki */
-            color: #ffeb3b; /* Żółty kolor */
+            font-size: 2em;
+            color: #ffeb3b;
             margin-bottom: 20px;
         }
 
         .hero p {
-            font-family: 'Montserrat', sans-serif; /* Czcionka Montserrat */
-            font-size: 1.2em; /* Zwiększony rozmiar czcionki */
-            line-height: 1.5; /* Większy odstęp między liniami */
-            color: #ffeb3b; /* Żółty kolor */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #ffeb3b;
             max-width: 600px;
-            margin: 0 auto; /* Wyśrodkowanie tekstu */
-            font-weight: bold; /* Pogrubienie tekstu */
+            margin: 0 auto;
+            font-weight: bold;
         }
 
         img {
-            max-width: 80%; /* Zmniejszona szerokość obrazka */
+            max-width: 80%;
             height: auto;
             margin: 20px 0;
             border: 5px solid #ffeb3b;
@@ -195,9 +199,8 @@
             text-align: center;
             background: #ffeb3b;
             padding: 20px;
-            position: fixed;
             width: 100%;
-            bottom: 0;
+            position: relative;
         }
 
         footer p {
@@ -210,8 +213,8 @@
 <body>
     <!-- Loader -->
     <div id="loader">
-        <img src="lbt.png" alt="Szylony FC Logo"> <!-- Dodanie logo -->
-        <div class="circle"></div> <!-- Żółte kółko -->
+        <img src="lbt.png" alt="Szylony FC Logo">
+        <div class="circle"></div>
     </div>
     <nav>
         <a href="/index.html">O nas</a>
@@ -219,28 +222,29 @@
         <a href="/terminarz.html">Terminarz</a>
         <a href="/kontakt.html">Kontakt</a>
     </nav>
-    <section id="about" class="hero">
-        <h2>Szyleny FC</h2>
-        <h3>Razem tworzymy historię!</h3>
-        <p>Witaj na stronie głównej naszego klubu. Przejdź do zakładek, aby dowiedzieć się więcej o drużynie, terminarzu lub skontaktować się z nami! <3</p>
-    </section>
-    <section id="team">
-        <img src="tsfc.png" alt="Szylony FC Logo">
-        <br><br>
-        <h2>Skład na Piekiełko</h2>
-        <br>
-        <img src="Skład.png" alt="Skład na Piekiełko">
-    </section>
+    <main>
+        <section id="about" class="hero">
+            <h2>Szyleny FC</h2>
+            <h3>Razem tworzymy historię!</h3>
+            <p>Witaj na stronie głównej naszego klubu. Przejdź do zakładek, aby dowiedzieć się więcej o drużynie, terminarzu lub skontaktować się z nami! <3</p>
+        </section>
+        <section id="team">
+            <img src="tsfc.png" alt="Szylony FC Logo">
+            <br><br>
+            <h2>Skład na Piekiełko</h2>
+            <br>
+            <img src="Skład.png" alt="Skład na Piekiełko">
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Szyleny FC. Wszystkie prawa zastrzeżone.</p>
     </footer>
-
     <script>
         // Ukryj loader po 4 sekundach
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.body.classList.add('loaded');
-            }, 4000); // Zmiana na 4 sekundy
+            }, 4000);
         });
     </script>
 </body>
