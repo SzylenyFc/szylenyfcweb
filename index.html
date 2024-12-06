@@ -19,8 +19,6 @@
         }
 
         body {
-            display: flex;
-            flex-direction: column;
             font-family: Arial, sans-serif;
             background: url('1.png') no-repeat center center fixed;
             background-size: cover;
@@ -84,13 +82,16 @@
 
         /* Sekcja z obrazkami */
         section {
-            margin: 0;
-            padding: 0;
+            padding: 20px 0;
+            text-align: center;
         }
 
         .image-section img {
-            width: 100%;
-            display: block; /* Usunięcie odstępów między sekcjami */
+            max-width: 80%; /* Zachowano oryginalne wymiary obrazków */
+            height: auto;
+            margin: 20px auto;
+            border: 5px solid #ffeb3b;
+            border-radius: 8px;
         }
 
         /* Stopka */
@@ -171,6 +172,7 @@
         </section>
         <section class="image-section">
             <img src="tsfc.png" alt="Szylony FC Logo">
+            <br><br>
             <img src="Skład.png" alt="Skład">
         </section>
     </main>
