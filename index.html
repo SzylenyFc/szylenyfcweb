@@ -4,10 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szyleny FC - Oficjalna Strona</title>
+    <!-- Dodanie favicon -->
     <link rel="icon" href="https://szylenyfc.pl/lbt.png" type="image/png">
+    <!-- Dodanie fontu Archivo Black i Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Dodaj poprawione style tutaj */
+        /* Styl ogólny */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('1.png') no-repeat center center fixed; /* Tło z pliku 1.png */
+            background-size: cover; /* Dopasowanie tła do ekranu */
+            color: #000;
+            overflow-x: hidden; /* Ukrycie przewijania poziomego */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            margin: 0;
+        }
+
+        /* Pasek nawigacyjny */
+        nav {
+            display: flex;
+            justify-content: space-around; /* Równomierne rozmieszczenie linków */
+            background: #000;
+            padding: 15px 0; /* Większa wysokość paska */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            width: 100%; /* Szerokość na 100% ekranu */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px 20px; /* Większa przestrzeń wokół tekstu */
+        }
+
+        nav a:hover {
+            color: #ffeb3b; /* Żółty tekst po najechaniu */
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero {
+            color: #000;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 3em;
+            color: #ffeb3b; /* Żółty kolor nagłówka */
+        }
+
+        .hero h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2em;
+        }
+
+        .hero p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2em;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        img {
+            max-width: 90%; /* Obraz zajmuje maksymalnie 90% szerokości */
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            background: #000; /* Czarny pasek */
+            padding: 20px;
+            width: 100%;
+            color: #fff; /* Biały tekst */
+            font-size: 14px;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .hero h3 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -19,18 +132,19 @@
             <a href="/kontakt.html">Kontakt</a>
         </nav>
     </header>
+
     <main>
-        <section id="about" class="hero">
+        <section class="hero">
             <h2>Szyleny FC</h2>
             <h3>Razem tworzymy historię!</h3>
             <p>Witaj na stronie głównej naszego klubu. Przejdź do zakładek, aby dowiedzieć się więcej o drużynie, terminarzu lub skontaktować się z nami! <3</p>
         </section>
-        <section id="team">
+        <section>
             <img src="tsfc.png" alt="Szylony FC Logo">
-            <br><br>
             <img src="Skład.png" alt="Skład">
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Szyleny FC. Wszystkie prawa zastrzeżone.</p>
     </footer>
