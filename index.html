@@ -45,14 +45,14 @@
         /* Pasek nawigacyjny */
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-around; /* Rozciąganie elementów */
             background: #000;
             padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 10;
-            width: 100%; /* Szerokość na 100% */
-            box-sizing: border-box; /* Upewnienie się, że szerokość uwzględnia padding */
+            width: 100vw; /* Ustawienie szerokości na 100% widocznej szerokości */
+            box-sizing: border-box; /* Upewnienie się, że padding nie wpływa na szerokość */
             margin: 0; /* Usunięcie marginesu */
         }
 
@@ -74,9 +74,9 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: row; /* Zmiana na poziome ułożenie linków */
-                justify-content: center;
+                justify-content: space-around; /* Elementy rozmieszczone równomiernie */
                 padding: 10px 0;
-                width: 100%; /* Szerokość na 100% */
+                width: 100vw; /* Ustawienie szerokości na 100% */
                 box-sizing: border-box;
             }
 
