@@ -52,6 +52,7 @@
             top: 0;
             z-index: 10;
             width: 100%;
+            box-sizing: border-box;
         }
 
         nav a {
@@ -61,16 +62,26 @@
             font-size: 18px;
             font-weight: bold;
             transition: color 0.3s;
+            padding: 10px;
         }
 
         nav a:hover {
             color: #ffeb3b;
         }
 
-        /* Responsywność paska nawigacyjnego */
+        /* Dostosowanie paska nawigacyjnego na urządzenia mobilne */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 0;
+            }
+
             nav a {
-                font-size: 16px;
+                margin: 10px 0;
+                font-size: 20px;
+                text-align: center;
+                width: 100%; /* Zapewnia, że linki będą wypełniały całą szerokość */
             }
         }
 
@@ -135,10 +146,6 @@
 
         /* Responsywność dla telefonu */
         @media (max-width: 768px) {
-            body {
-                background-size: cover;
-            }
-
             .hero h2 {
                 font-size: 2.5em;
             }
@@ -174,6 +181,8 @@
             nav a {
                 margin-bottom: 10px;
                 font-size: 16px;
+                text-align: center;
+                width: 100%;
             }
         }
     </style>
