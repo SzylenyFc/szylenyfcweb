@@ -17,7 +17,7 @@
             background: url('1.png') no-repeat center center fixed; /* Tło z pliku 1.png */
             background-size: cover; /* Dopasowanie tła do ekranu */
             color: #000; /* Czarny kolor tekstu */
-            overflow-x: hidden;
+            overflow-x: hidden; /* Ukrycie przewijania poziomego */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -51,9 +51,9 @@
             position: sticky;
             top: 0;
             z-index: 10;
-            width: 100vw; /* Ustawienie pełnej szerokości okna */
+            width: 100%; /* Szerokość na 100% */
+            box-sizing: border-box; /* Upewnienie się, że szerokość uwzględnia padding */
             margin: 0; /* Usunięcie marginesu */
-            box-sizing: border-box;
         }
 
         nav a {
@@ -76,7 +76,7 @@
                 flex-direction: row; /* Zmiana na poziome ułożenie linków */
                 justify-content: center;
                 padding: 10px 0;
-                width: 100%;
+                width: 100%; /* Szerokość na 100% */
                 box-sizing: border-box;
             }
 
