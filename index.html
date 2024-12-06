@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szyleny FC - Oficjalna Strona</title>
+    <!-- Dodanie favicon -->
     <link rel="icon" href="https://szylenyfc.pl/lbt.png" type="image/png">
+    <!-- Dodanie fontu Archivo Black i Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
         /* Styl ogólny */
@@ -23,38 +25,14 @@
             background: url('1.png') no-repeat center center fixed;
             background-size: cover;
             color: #000;
-        }
-
-        /* Pasek nawigacyjny */
-        nav {
             display: flex;
-            justify-content: center;
-            background: #000;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            width: 100%;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: color 0.3s;
-            padding: 8px 10px;
-            white-space: nowrap;
-        }
-
-        nav a:hover {
-            color: #ffeb3b;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Sekcja główna z tłem */
         .hero {
-            background: url('tło2.png') no-repeat center center;
+            background: url('/mnt/data/tło2.jpg') no-repeat center center; /* Zmieniona ścieżka na jpg */
             background-size: cover;
             text-align: center;
             padding: 80px 20px;
@@ -80,6 +58,32 @@
             margin: 10px auto;
         }
 
+        /* Pasek nawigacyjny */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #000;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            width: 100%;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            color: #ffeb3b;
+        }
+
         /* Sekcja z obrazkami */
         section {
             padding: 20px 0;
@@ -87,61 +91,35 @@
         }
 
         .image-section img {
-            max-width: 80%; /* Zachowano oryginalne wymiary obrazków */
+            max-width: 80%;
             height: auto;
             margin: 20px auto;
             border: 5px solid #ffeb3b;
             border-radius: 8px;
         }
 
-        /* Stopka */
         footer {
             text-align: center;
             background: #000;
-            padding: 15px;
+            padding: 20px;
+            width: 100%;
             color: #fff;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
             font-size: 14px;
         }
 
-        /* Styl dla większych ekranów */
-        @media (min-width: 768px) {
-            .hero {
-                padding: 60px 20px;
-            }
-
-            .hero h2 {
-                font-size: 3em;
-            }
-
-            .hero h3 {
-                font-size: 2em;
-            }
-
-            .hero p {
-                font-size: 1.2em;
-            }
-
-            nav a {
-                margin: 0 15px;
-                font-size: 18px;
-            }
-        }
-
-        /* Styl dla telefonów */
+        /* Responsywność */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: row;
-                justify-content: space-around;
-                padding: 14px 0;
-            }
-
-            nav a {
-                margin: 0 8px;
-                font-size: 14px;
+            .hero {
+                padding: 50px 20px;
             }
 
             .hero h2 {
-                font-size: 2.2em;
+                font-size: 2em;
             }
 
             .hero h3 {
@@ -150,6 +128,22 @@
 
             .hero p {
                 font-size: 1em;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            nav a {
+                font-size: 14px;
             }
         }
     </style>
@@ -165,15 +159,17 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section id="about" class="hero">
             <h2>Szyleny FC</h2>
             <h3>Razem tworzymy historię!</h3>
             <p>Witaj na stronie głównej naszego klubu. Przejdź do zakładek, aby dowiedzieć się więcej o drużynie, terminarzu lub skontaktować się z nami! <3</p>
         </section>
-        <section class="image-section">
-            <img src="tsfc.png" alt="Szylony FC Logo">
-            <br><br>
-            <img src="Skład.png" alt="Skład">
+        <section id="team">
+            <div class="image-section">
+                <img src="tsfc.png" alt="Szylony FC Logo">
+                <br><br>
+                <img src="Skład.png" alt="Skład">
+            </div>
         </section>
     </main>
 
