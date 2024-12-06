@@ -54,11 +54,12 @@
             color: #ffeb3b;
         }
 
-        /* Sekcja główna */
-        main {
-            flex: 1; /* Zajmuje pozostałą przestrzeń między nagłówkiem a stopką */
+        /* Sekcja główna z tłem */
+        .hero {
+            background: url('tło2.png') no-repeat center center;
+            background-size: cover;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
         .hero h2 {
@@ -100,7 +101,7 @@
         /* Styl dla większych ekranów */
         @media (min-width: 768px) {
             .hero {
-                padding: 40px 20px;
+                padding: 60px 20px;
             }
 
             .hero h2 {
