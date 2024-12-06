@@ -14,7 +14,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #ffffcc; /* Jasnożółte tło */
+            background: #ffffff; /* Białe tło */
             color: #000; /* Czarny kolor tekstu */
             overflow-x: hidden;
             display: flex;
@@ -25,21 +25,6 @@
         /* Główna zawartość strony */
         main {
             flex: 1;
-        }
-
-        /* Tło obrazu */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('tło.png') no-repeat center center;
-            background-size: cover;
-            z-index: -1;
-            opacity: 0.8;
-            transform: scale(1.5);
         }
 
         /* Pasek przewijania */
@@ -53,7 +38,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #fff9c4;
+            background: #e0e0e0; /* Jasne tło paska */
         }
 
         /* Animacja ładowania */
@@ -63,7 +48,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #ffffcc;
+            background: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: center;
