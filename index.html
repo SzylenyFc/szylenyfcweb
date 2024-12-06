@@ -4,189 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szyleny FC - Oficjalna Strona</title>
-    <!-- Dodanie favicon -->
     <link rel="icon" href="https://szylenyfc.pl/lbt.png" type="image/png">
-    <!-- Dodanie fontu Archivo Black i Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Styl ogólny */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('1.png') no-repeat center center fixed; /* Tło z pliku 1.png */
-            background-size: cover; /* Dopasowanie tła do ekranu */
-            color: #000; /* Czarny kolor tekstu */
-            overflow-x: hidden; /* Ukrycie przewijania poziomego */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            box-sizing: border-box; /* Dodajemy box-sizing: border-box dla całego body */
-        }
-
-        /* Główna zawartość strony */
-        main {
-            flex: 1;
-        }
-
-        /* Pasek przewijania */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #000; /* Czarny kolor suwaka */
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #e0e0e0; /* Jasne tło paska */
-        }
-
-        /* Pasek nawigacyjny */
-        nav {
-            display: flex;
-            justify-content: center; /* Wyśrodkowanie linków */
-            background: #000;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            width: 100%; /* Szerokość na 100% ekranu */
-            box-sizing: border-box; /* Upewnienie się, że padding nie wpływa na szerokość */
-            margin: 0; /* Usunięcie marginesu */
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s;
-            padding: 10px;
-        }
-
-        nav a:hover {
-            color: #ffeb3b;
-        }
-
-        /* Dostosowanie paska nawigacyjnego na urządzenia mobilne */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: row; /* Zmiana na poziome ułożenie linków */
-                justify-content: space-around; /* Elementy rozmieszczone równomiernie */
-                padding: 10px 0;
-                width: 100%; /* Ustawienie szerokości na 100% */
-                box-sizing: border-box;
-            }
-
-            nav a {
-                margin: 0 10px; /* Zmniejszenie marginesów między linkami */
-                font-size: 16px;
-                text-align: center;
-            }
-        }
-
-        section {
-            padding: 50px;
-            text-align: center;
-        }
-
-        .hero {
-            color: #000; /* Czarny tekst */
-            padding: 100px 20px;
-            animation: slide-in 2s ease-out;
-        }
-
-        @keyframes slide-in {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .hero h2 {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #ffeb3b; /* Żółty kolor napisu "Szyleny FC" */
-        }
-
-        .hero h3 {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2em;
-            line-height: 1.5;
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: bold;
-        }
-
-        img {
-            max-width: 80%;
-            height: auto;
-            margin: 20px 0;
-            border: 5px solid #ffeb3b;
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            background: #000; /* Czarny pasek */
-            padding: 20px;
-            width: 100%;
-            color: #fff; /* Biały tekst */
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* Responsywność dla telefonu */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.5em;
-            }
-
-            .hero h3 {
-                font-size: 1.8em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            section {
-                padding: 20px;
-            }
-
-            img {
-                max-width: 100%;
-            }
-        }
-
-        /* Dostosowanie tła do małych ekranów */
-        @media (max-width: 480px) {
-            .hero {
-                padding: 50px 20px;
-            }
-
-            nav {
-                flex-direction: row; /* Linki w jednym ciągu */
-                padding: 10px 0;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 14px;
-                text-align: center;
-            }
-        }
+        /* Dodaj poprawione style tutaj */
     </style>
 </head>
 <body>
@@ -198,7 +19,6 @@
             <a href="/kontakt.html">Kontakt</a>
         </nav>
     </header>
-
     <main>
         <section id="about" class="hero">
             <h2>Szyleny FC</h2>
@@ -211,7 +31,6 @@
             <img src="Skład.png" alt="Skład">
         </section>
     </main>
-
     <footer>
         <p>&copy; 2024 Szyleny FC. Wszystkie prawa zastrzeżone.</p>
     </footer>
