@@ -4,82 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szyleny FC - Strona Główna</title>
+    <!-- Dodanie czcionki z Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Styl ogólny */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #fff;
             color: #000;
-            overflow-x: hidden;
-        }
-
-        /* Pasek przewijania */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #000;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #e0e0e0;
         }
 
         /* Pasek nawigacyjny */
         nav {
+            background-color: #000;
+            color: #fff;
+            padding: 17px 20px;
             display: flex;
-            justify-content: flex-end;  /* Linki po prawej stronie */
-            background: #000;
-            padding: 10px 0;
-            position: fixed;  /* Przypięcie do góry */
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 10;
-            box-sizing: border-box;
         }
 
-        nav a {
-            color: #fff;
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #f1c40f;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
+            color: #fff;
+            font-size: 1.2rem; /* Zwiększona czcionka */
+            font-family: 'Archivo Black', sans-serif; /* Użycie czcionki Archivo Black */
             font-weight: bold;
             transition: color 0.3s;
             padding: 10px;
         }
 
-        nav a:hover {
-            color: #ffeb3b;
+        nav ul li a:hover {
+            color: #f1c40f;
         }
 
-        /* Dostosowanie paska nawigacyjnego na urządzenia mobilne */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: row;
-                justify-content: flex-end;  /* Linki po prawej stronie */
-                padding: 10px 0;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 16px;
-                text-align: center;
-            }
-        }
-
-        /* Stylowanie sekcji głównej */
         header {
             text-align: center;
             padding: 50px 20px;
             background-color: #000;
             color: #f1c40f;
-            margin-top: 70px; /* Zapewnienie, że nagłówek nie będzie przykryty przez pasek */
+            margin-top: 100px; /* Dodanie przestrzeni, aby pasek nie nachodził na tekst */
         }
 
         header h1 {
@@ -91,10 +78,8 @@
             font-size: 1.5rem;
         }
 
-        /* Dodanie marginesu do treści, aby była widoczna pod paskiem */
         .content {
             padding: 20px;
-            margin-top: 100px;  /* Zapewnia przestrzeń na górze strony, aby nie było przykryte przez pasek */
         }
 
         footer {
@@ -122,12 +107,15 @@
 <body>
     <!-- Pasek nawigacyjny -->
     <nav>
-        <a href="index.html">Strona Główna</a>
-        <a href="druzyna.html">Drużyna</a>
-        <a href="terminarz.html">Terminarz</a>
-        <a href="kontakt.html">Kontakt</a>
+        <div class="logo"></div>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="druzyna.html">Drużyna</a></li>
+            <li><a href="terminarz.html">Terminarz</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
     </nav>
-    
+
     <!-- Nagłówek strony -->
     <header>
         <h1>Szyleny FC</h1>
@@ -136,8 +124,8 @@
         <img src="lbt.png" alt="Terminarz Szyleny FC" style="max-width: 23%; height: auto;">
     </header>
 
-    <!-- Treść strony -->
     <div class="content">
+        <p></p><br>
         <center>
             <img src="szylenyfc.png" alt="Terminarz Szyleny FC" class="fade-in" border="10" style="max-width: 70%; height: auto;">
         </center><br><br>
@@ -147,9 +135,9 @@
             <img src="Skład.png" alt="Terminarz Szyleny FC" border="10" class="fade-in" style="max-width: 43%; height: auto;">
         </center>
     </div>
+
     <br><br><br><br><br>
 
-    <!-- Stopka strony -->
     <footer>
         &copy; 2024 Szyleny FC. Wszystkie prawa zastrzeżone.
     </footer>
