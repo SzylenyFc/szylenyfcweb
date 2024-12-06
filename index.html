@@ -97,8 +97,11 @@
             background: url('tło2.jpg') no-repeat center center; /* Tło tło2.jpg */
             background-size: 100% 150%; /* Zwiększone rozciąganie tła w pionie */
             color: #000; /* Czarny tekst */
-            padding: 80px 20px;
+            padding: 0; /* Usunięcie paddingu na urządzeniach mobilnych */
+            margin: 0; /* Usunięcie marginesów */
             animation: slide-in 2s ease-out;
+            height: auto; /* Dopasowanie wysokości */
+            position: relative;
         }
 
         @keyframes slide-in {
@@ -128,12 +131,14 @@
             font-weight: bold;
         }
 
-        img {
-            max-width: 80%;
+        .hero img {
+            max-width: 100%; /* Zapewnienie, że obraz jest maksymalnie szeroki */
             height: auto;
-            margin: 20px 0;
+            margin: 0;
+            padding: 0;
             border: 5px solid #ffeb3b;
             border-radius: 8px;
+            display: block; /* Zapewnienie, że obraz jest elementem blokowym */
         }
 
         footer {
@@ -169,6 +174,10 @@
 
             img {
                 max-width: 100%;
+            }
+
+            .hero {
+                padding: 0; /* Usunięcie marginesów i paddingu na telefonach */
             }
         }
 
@@ -206,10 +215,9 @@
             <h2>Szyleny FC</h2>
             <h3>Razem tworzymy historię!</h3>
             <p>Witaj na stronie głównej naszego klubu. Przejdź do zakładek, aby dowiedzieć się więcej o drużynie, terminarzu lub skontaktować się z nami! <3</p>
+            <img src="tsfc.png" alt="Szylony FC Logo"> <!-- Obrazek TSFC -->
         </section>
         <section id="team">
-            <img src="tsfc.png" alt="Szylony FC Logo">
-            <br><br>
             <img src="Skład.png" alt="Skład">
         </section>
     </main>
