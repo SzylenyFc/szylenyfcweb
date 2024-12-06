@@ -20,7 +20,7 @@
 
         body {
             display: flex;
-            flex-direction: column; /* Flexbox dla układu strony */
+            flex-direction: column;
             font-family: Arial, sans-serif;
             background: url('1.png') no-repeat center center fixed;
             background-size: cover;
@@ -56,7 +56,7 @@
 
         /* Sekcja główna z tłem */
         .hero {
-            background: url('tło2.jpg') no-repeat center center;
+            background: url('tło2.png') no-repeat center center;
             background-size: cover;
             text-align: center;
             padding: 80px 20px;
@@ -82,11 +82,15 @@
             margin: 10px auto;
         }
 
-        img {
-            max-width: 80%;
-            height: auto;
-            margin: 20px auto;
-            display: block;
+        /* Sekcja z obrazkami */
+        section {
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-section img {
+            width: 100%;
+            display: block; /* Usunięcie odstępów między sekcjami */
         }
 
         /* Stopka */
@@ -146,10 +150,6 @@
             .hero p {
                 font-size: 1em;
             }
-
-            img {
-                max-width: 100%;
-            }
         }
     </style>
 </head>
@@ -169,7 +169,7 @@
             <h3>Razem tworzymy historię!</h3>
             <p>Witaj na stronie głównej naszego klubu. Przejdź do zakładek, aby dowiedzieć się więcej o drużynie, terminarzu lub skontaktować się z nami! <3</p>
         </section>
-        <section>
+        <section class="image-section">
             <img src="tsfc.png" alt="Szylony FC Logo">
             <img src="Skład.png" alt="Skład">
         </section>
