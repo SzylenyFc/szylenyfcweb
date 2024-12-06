@@ -19,12 +19,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         nav .logo {
             font-size: 1.8rem;
             font-weight: bold;
             color: #f1c40f;
+            cursor: pointer;
+        }
+
+        /* Style dla przycisku rozwijanego menu */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 4px;
+            background-color: #f1c40f;
         }
 
         nav ul {
@@ -48,6 +64,45 @@
 
         nav ul li a:hover {
             color: #f1c40f;
+        }
+
+        /* Ukryte rozwijane menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #000;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1c40f;
+            color: #000;
+        }
+
+        /* Wersja na mobilne urządzenia */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .dropdown-menu.active {
+                display: block;
+            }
         }
 
         header {
@@ -80,24 +135,31 @@
 </head>
 <body>
     <nav>
-        <div class="logo"></div>
-         
+        <div class="logo" onclick="toggleMenu()">Szyleny FC</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <ul>
             <li><a href="index.html">Strona Główna</a></li>
             <li><a href="druzyna.html">Drużyna</a></li>
             <li><a href="terminarz.html">Terminarz</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
+        <div class="dropdown-menu">
+            <a href="index.html">Strona Główna</a>
+            <a href="druzyna.html">Drużyna</a>
+            <a href="terminarz.html">Terminarz</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
     </nav>
-    
 
     <header>
-        
         <h1>Szyleny FC</h1>
         <p>Razem tworzymy historię!</p><br>
         <p>Witaj na stronie głównej naszego klubu. Przejdź do zakładek, aby dowiedzieć się więcej o drużynie, terminarzu lub skontaktować się z nami! <3</p>
         <img src="lbt.png" alt="Terminarz Szyleny FC" style="max-width: 23%; height: auto;">
-        
     </header>
 
     <div class="content">
@@ -112,7 +174,8 @@
     <img src="Skład.png" alt="Terminarz Szyleny FC" border="10"  class="fade-in" style="max-width: 43%; height: auto;">
     </center>
     </div>
-<br>
+
+    <br>
     <br>
     <br>
     <br>
@@ -120,5 +183,11 @@
     <footer>
         &copy; 2024 Szyleny FC. Wszystkie prawa zastrzeżone.
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.dropdown-menu').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
