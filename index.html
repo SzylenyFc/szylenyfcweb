@@ -34,10 +34,11 @@
             justify-content: flex-end;  /* Linki po prawej stronie */
             background: #000;
             padding: 10px 0;
-            position: sticky;
+            position: fixed;  /* Przypięcie do góry */
             top: 0;
-            z-index: 10;
+            left: 0;
             width: 100%;
+            z-index: 10;
             box-sizing: border-box;
         }
 
@@ -78,6 +79,7 @@
             padding: 50px 20px;
             background-color: #000;
             color: #f1c40f;
+            margin-top: 70px; /* Dodanie marginesu, aby nagłówek nie był przykryty przez pasek */
         }
 
         header h1 {
