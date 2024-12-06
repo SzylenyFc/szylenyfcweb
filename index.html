@@ -132,6 +132,50 @@
             margin: 0;
             font-size: 14px;
         }
+
+        /* Responsywność dla telefonu */
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .hero h3 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        /* Dostosowanie tła do małych ekranów */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 50px 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            nav a {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
