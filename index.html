@@ -7,9 +7,10 @@
     <!-- Dodanie czcionki z Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* Styl ogólny */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Użycie czcionki Montserrat */
             background-color: #fff;
             color: #000;
         }
@@ -20,7 +21,7 @@
             color: #fff;
             padding: 17px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;  /* Linki po lewej stronie */
             align-items: center;
             position: fixed;
             top: 0;
@@ -30,9 +31,10 @@
         }
 
         nav .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
             color: #f1c40f;
+            margin-right: auto; /* Aby logo było na początku */
         }
 
         nav ul {
@@ -40,7 +42,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
 
         nav ul li {
@@ -50,7 +52,7 @@
         nav ul li a {
             text-decoration: none;
             color: #fff;
-            font-size: 1.2rem; /* Zwiększona czcionka */
+            font-size: 1.3rem; /* Zwiększona czcionka */
             font-family: 'Archivo Black', sans-serif; /* Użycie czcionki Archivo Black */
             font-weight: bold;
             transition: color 0.3s;
@@ -61,21 +63,24 @@
             color: #f1c40f;
         }
 
+        /* Stylowanie nagłówka strony */
         header {
             text-align: center;
-            padding: 50px 20px;
+            padding: 80px 20px;
             background-color: #000;
             color: #f1c40f;
-            margin-top: 100px; /* Dodanie przestrzeni, aby pasek nie nachodził na tekst */
+            margin-top: 100px; /* Zapewnienie, że pasek nawigacyjny nie nachodzi na nagłówek */
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
+            font-family: 'Archivo Black', sans-serif; /* Zwiększenie wielkości i zmiana czcionki */
         }
 
         header p {
             font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .content {
@@ -107,7 +112,7 @@
 <body>
     <!-- Pasek nawigacyjny -->
     <nav>
-        <div class="logo"></div>
+        <div class="logo">Szyleny FC</div>
         <ul>
             <li><a href="index.html">Strona Główna</a></li>
             <li><a href="druzyna.html">Drużyna</a></li>
