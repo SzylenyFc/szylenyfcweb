@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SzylenyFC</title>
-    <link rel="icon" href="lbt.png" type="image/x-icon">
+    <title>Drużyna - SzylenyFC</title>
+    <link rel="icon" href="lbt.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -16,9 +16,6 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ffcc00, #000);
             color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
             overflow-y: scroll;
             scrollbar-width: thin;
             scrollbar-color: #ffcc00 #000;
@@ -56,6 +53,18 @@
             transition: transform 0.3s;
         }
 
+        .menu-toggle.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         nav {
             position: fixed;
             top: 0;
@@ -89,31 +98,13 @@
             transform: scale(1.05);
         }
 
-        .main-content {
-            padding: 20px;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            flex: 1;
-        }
-
-        .main-content h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .main-content p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        .team-info {
-            background-color: #fff;
-            padding: 50px;
-            margin: 40px auto;
-            max-width: 1000px;
+        .team-section {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             animation: fadeInUp 1s ease-out;
         }
 
@@ -128,89 +119,83 @@
             }
         }
 
-        .team-info h3 {
+        .team-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .team-section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .team-member {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .achievements {
+            background-color: #fff;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .achievements h3 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
 
-        .team-info p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .team-info ul {
-            list-style-type: none;
+        .achievements ul {
+            list-style: none;
             padding: 0;
         }
 
-        .team-info ul li {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .photo-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
-
-        .photo-gallery img {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .photo-gallery img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(255, 255, 0, 0.5);
-        }
-
-        .team-results {
-            background-color: #fff;
-            color: #000;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .team-results h3 {
-            margin-top: 0;
-        }
-
-        .team-results p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .weather-section {
-            background-color: #fff;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .weather-section h3 {
-            margin-top: 0;
-        }
-
-        .weather-section p {
+        .achievements ul li {
             font-size: 1.2rem;
-            margin-top: 10px;
+            margin: 10px 0;
         }
 
         footer {
@@ -219,8 +204,6 @@
             background-color: #000;
             color: #fff;
             font-size: 14px;
-            margin-top: auto;
-            width: 100%;
         }
 
         @media (max-width: 768px) {
@@ -257,49 +240,32 @@
         <div></div>
         <div></div>
     </div>
-    <h1>SzylenyFC</h1>
+    <h1>Drużyna - SzylenyFC</h1>
 </header>
 
 <nav>
     <a href="index.html">Strona Główna</a>
-    <a href="druzynao.html">Drużyna</a>
+    <a href="index.html">Drużyna</a>
     <a href="terminarz.html">Terminarz</a>
     <a href="historia.html">Historia</a>
     <a href="kontakt.html">Kontakt</a>
 </nav>
 
-<div class="main-content">
-    <h2>Witamy w SzylenyFC!</h2>
-    <p>Jesteśmy dumni, że możemy gościć Cię na naszej stronie. Śledź nasze aktualności, poznaj naszą drużynę i bądź na bieżąco z terminarzem meczów.</p>
+<div class="team-section">
+    <h2>Nasza Drużyna</h2>
+    <p>Nasza drużyna składa się z pasjonatów piłki nożnej...</p>
+
+    <div class="team-members">
+        <!-- Lista zawodników -->
+    </div>
 </div>
 
-<div class="team-info hover-effect">
-    <h3>O SzylenyFC</h3>
-    <p>SzylenyFC to drużyna piłkarska, która powstała w 2023 roku. Jesteśmy pasjonatami futbolu, a nasza drużyna wyróżnia się nie tylko na boisku, ale i w społeczności. Celem naszej drużyny jest rozwój młodych talentów .</p>
+<div class="achievements">
+    <h3>Nasze Osiągnięcia</h3>
     <ul>
-        <li><strong>Data założenia:</strong> 2023 rok</li>
-        <li><strong>Trener:</strong> Kacper Szwajczewski</li>
-        <li><strong>Stadion:</strong> Boisko przy szkole podstawowej w Szylenach</li>
-        <li><strong>Kolory drużyny:</strong> Żółto-czarny</li>
+        <li>Puchar Ligi: ?</li>
+        <li>Turniej Gminny: 2023</li>
     </ul>
-</div>
-
-<div class="team-results">
-    <h3>Wyniki Drużyny</h3>
-    <p><strong>SzylenyFC vs. ZKS Zakrzewiec (Sparing)</strong> - wynik: 3-9</p>
-    <p><strong>SzylenyFC vs. Ultra Promil (Sparing)</strong> - wynik: 1-6</p>
-</div>
-
-<div class="photo-gallery">
-    <img src="z1.png" alt="Zdjęcie 1">
-    <img src="z2.png" alt="Zdjęcie 2">
-    <img src="z5.png" alt="Zdjęcie 3">
-    <img src="z6.png" alt="Zdjęcie 4">
-</div>
-
-<div class="weather-section">
-    <h3>Prognoza Pogody</h3>
-    <p>Na nadchodzący mecz z <h3>Piekiełkiem</h3> zapowiadane jest Pochmurne niebo i temperatura 3°C. Do dupy warunki do gry!</p>
 </div>
 
 <footer>
