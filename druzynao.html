@@ -257,17 +257,38 @@
     <p>Nasza drużyna składa się z pasjonatów piłki nożnej, którzy od lat trenują i grają razem. Poznaj naszych zawodników oraz osiągnięcia drużyny.</p>
 
     <!-- Członkowie drużyny -->
-    <div class="team-members">
-        <div class="team-member">
-            <img src="z2.png" alt="Zawodnik 1">
+   <!-- Zawodnik 3 -->
+        <div class="team-member" onclick="toggleStats('jacek')">
+            <img src="z2.png" alt="Zawodnik 3">
             <h3>Faja</h3>
-            <p>Kapitan drużyny</p>
+            <p>Kapitan</p>
+            <div class="stats" id="stats-jacek">
+                <div class="stat">Gole: <span id="goals-jacek">0</span></div>
+                <div class="stat">Asysty: <span id="assists-jacek">0</span></div>
+                <div class="stat">Atrybuty: <span id="assists-jacek"><br>  
+                    -Szybkość,<br>  
+                    -Pozycjonowanie się</span></div><br>  
+
+            </div>
         </div>
-        <div class="team-member">
-            <img src="z1.png" alt="Zawodnik 2">
-            <h3>Oponek</h3>
-            <p>Napastnik</p>
-        </div>
+    </div>
+
+    <script>
+        // Funkcja do przełączania widoczności statystyk
+        function toggleStats(player) {
+            const stats = document.getElementById(`stats-${player}`);
+            const currentlyVisible = stats.style.display === "block";
+
+            // Ukrywanie wszystkich statystyk
+            const allStats = document.querySelectorAll('.stats');
+            allStats.forEach(stat => stat.style.display = "none");
+
+            // Jeśli statystyki tego zawodnika nie były widoczne, pokazujemy je
+            if (!currentlyVisible) {
+                stats.style.display = "block";
+            }
+        }
+    </script>
         <div class="team-member">
             <img src="z3.png" alt="Zawodnik 3">
             <h3>Igor</h3>
