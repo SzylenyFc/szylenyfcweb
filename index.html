@@ -57,10 +57,14 @@
             color: #000;
         }
 
-        .main-content {
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
+            gap: 20px;
+            flex: 1; /* To make sure content pushes the footer to the bottom */
         }
 
         .photo-gallery {
@@ -68,7 +72,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            padding: 20px;
         }
 
         .photo-gallery img {
@@ -89,10 +92,10 @@
         .weather-section {
             background-color: #fff;
             padding: 20px;
-            margin: 20px auto;
             border-radius: 10px;
             max-width: 800px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         footer {
@@ -101,6 +104,8 @@
             background-color: #000;
             color: #fff;
             font-size: 14px;
+            margin-top: auto; /* Forces the footer to the bottom */
+            width: 100%;
         }
     </style>
 </head>
@@ -118,38 +123,38 @@
     <a href="kontakt.html">Kontakt</a>
 </nav>
 
-<div class="main-content">
+<div class="content">
     <h2>Witamy w SzylenyFC!</h2>
     <p>Jesteśmy dumni, że możemy gościć Cię na naszej stronie. Śledź nasze aktualności, poznaj naszą drużynę i bądź na bieżąco z terminarzem meczów.</p>
-</div>
 
-<div class="photo-gallery">
-    <img src="z1.png" alt="Zdjęcie 1">
-    <img src="z2.png" alt="Zdjęcie 2">
-    <img src="z5.png" alt="Zdjęcie 3">
-    <img src="z6.png" alt="Zdjęcie 4">
-</div>
+    <div class="photo-gallery">
+        <img src="z1.png" alt="Zdjęcie 1">
+        <img src="z2.png" alt="Zdjęcie 2">
+        <img src="z5.png" alt="Zdjęcie 3">
+        <img src="z6.png" alt="Zdjęcie 4">
+    </div>
 
-<div class="team-info">
-    <h3>O SzylenyFC</h3>
-    <p>SzylenyFC to drużyna piłkarska, która powstała w 2023 roku. Celem naszej drużyny jest rozwój młodych talentów.</p>
-    <ul>
-        <li><strong>Data założenia:</strong> 2023 rok</li>
-        <li><strong>Trener:</strong> Kacper Szwajczewski</li>
-        <li><strong>Stadion:</strong> Boisko przy szkole podstawowej w Szylenach</li>
-        <li><strong>Kolory drużyny:</strong> Żółto-czarny</li>
-    </ul>
-</div>
+    <div class="team-info">
+        <h3>O SzylenyFC</h3>
+        <p>SzylenyFC to drużyna piłkarska, która powstała w 2023 roku. Celem naszej drużyny jest rozwój młodych talentów.</p>
+        <ul>
+            <li><strong>Data założenia:</strong> 2023 rok</li>
+            <li><strong>Trener:</strong> Kacper Szwajczewski</li>
+            <li><strong>Stadion:</strong> Boisko przy szkole podstawowej w Szylenach</li>
+            <li><strong>Kolory drużyny:</strong> Żółto-czarny</li>
+        </ul>
+    </div>
 
-<div class="team-results">
-    <h3>Wyniki Drużyny</h3>
-    <p>SzylenyFC vs. ZKS Zakrzewiec (Sparing): 3-9</p>
-    <p>SzylenyFC vs. Ultra Promil (Sparing): 1-6</p>
-</div>
+    <div class="team-results">
+        <h3>Wyniki Drużyny</h3>
+        <p>SzylenyFC vs. ZKS Zakrzewiec (Sparing): 3-9</p>
+        <p>SzylenyFC vs. Ultra Promil (Sparing): 1-6</p>
+    </div>
 
-<div class="weather-section">
-    <h3>Prognoza Pogody</h3>
-    <p>Na nadchodzący mecz z Piekiełkiem zapowiadane jest pochmurne niebo i temperatura 3°C.</p>
+    <div class="weather-section">
+        <h3>Prognoza Pogody</h3>
+        <p>Na nadchodzący mecz z Piekiełkiem zapowiadane jest pochmurne niebo i temperatura 3°C.</p>
+    </div>
 </div>
 
 <footer>
