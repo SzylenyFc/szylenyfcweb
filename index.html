@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SzylenyFC</title>
-    <!-- Ikona karty -->
-    <link rel="icon" href="lbt.png" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -20,6 +18,9 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: #ffcc00 #000;
         }
 
         header {
@@ -27,10 +28,8 @@
             color: #fff;
             padding: 20px;
             text-align: center;
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
@@ -67,7 +66,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            padding: 80px 10px; /* Dodano odstęp od góry */
+            padding: 50px 10px;
             transition: left 0.3s ease;
             z-index: 1000;
         }
@@ -90,17 +89,64 @@
         }
 
         .main-content {
-            padding: 100px 20px 20px; /* Dodano odstęp od góry */
+            padding: 20px;
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
-            flex: 1;
+            flex: 1; /* To make sure the main content takes up remaining space */
         }
 
-        .team-info,
-        .team-results,
-        .weather-section {
-            margin-top: 20px;
+        .main-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .main-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Sekcja drużyny */
+        .team-info {
+            background-color: #fff;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .team-info p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .team-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-info ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
         }
 
         /* Galeria zdjęć */
@@ -110,9 +156,10 @@
             justify-content: center;
             gap: 20px;
             padding: 20px;
-            margin-top: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1200px;
         }
 
         .photo-gallery img {
@@ -128,12 +175,55 @@
             box-shadow: 0 4px 15px rgba(255, 255, 0, 0.5);
         }
 
+        /* Wyniki drużyny */
+        .team-results {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .team-results h3 {
+            margin-top: 0;
+        }
+
+        .team-results p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Sekcja z pogodą */
+        .weather-section {
+            background-color: #fff;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .weather-section h3 {
+            margin-top: 0;
+        }
+
+        .weather-section p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Stopka */
         footer {
             text-align: center;
             padding: 20px;
             background-color: #000;
             color: #fff;
             font-size: 14px;
+            margin-top: auto; /* Makes the footer stick to the bottom */
             width: 100%;
         }
 
@@ -188,9 +278,9 @@
 </div>
 
 <!-- Sekcja drużyny -->
-<div class="team-info">
+<div class="team-info hover-effect">
     <h3>O SzylenyFC</h3>
-    <p>SzylenyFC to drużyna piłkarska, która powstała w 2023 roku. Jesteśmy pasjonatami futbolu, a nasza drużyna wyróżnia się nie tylko na boisku, ale i w społeczności. Celem naszej drużyny jest rozwój młodych talentów.</p>
+    <p>SzylenyFC to drużyna piłkarska, która powstała w 2023 roku. Jesteśmy pasjonatami futbolu, a nasza drużyna wyróżnia się nie tylko na boisku, ale i w społeczności. Celem naszej drużyny jest rozwój młodych talentów .</p>
     <ul>
         <li><strong>Data założenia:</strong> 2023 rok</li>
         <li><strong>Trener:</strong> Kacper Szwajczewski</li>
@@ -217,7 +307,7 @@
 <!-- Sekcja Pogody -->
 <div class="weather-section">
     <h3>Prognoza Pogody</h3>
-    <p>Na nadchodzący mecz z <strong>Piekiełkiem</strong> zapowiadane jest pochmurne niebo i temperatura 3°C. Do dupy warunki do gry!</p>
+    <p>Na nadchodzący mecz z <h3>Piekiełkiem</h3> zapowiadane jest Pochmurne niebo i temperatura 3°C. Do dupy warunki do gry!</p>
 </div>
 
 <!-- Stopka -->
