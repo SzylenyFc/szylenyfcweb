@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> SzylenyFC </title>
+    <title>SzylenyFC</title>
     <style>
         * {
             margin: 0;
@@ -15,6 +15,9 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ffcc00, #000);
             color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             overflow-y: scroll;
             scrollbar-width: thin;
             scrollbar-color: #ffcc00 #000;
@@ -50,18 +53,6 @@
             background-color: #fff;
             margin: 5px 0;
             transition: transform 0.3s;
-        }
-
-        .menu-toggle.active div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .menu-toggle.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
         }
 
         nav {
@@ -102,6 +93,7 @@
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
+            flex: 1; /* To make sure the main content takes up remaining space */
         }
 
         .main-content h2 {
@@ -155,15 +147,6 @@
         .team-info ul li {
             font-size: 1.1rem;
             margin-bottom: 10px;
-        }
-
-        .hover-effect {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .hover-effect:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
         /* Galeria zdjęć */
@@ -240,6 +223,8 @@
             background-color: #000;
             color: #fff;
             font-size: 14px;
+            margin-top: auto; /* Makes the footer stick to the bottom */
+            width: 100%;
         }
 
         @media (max-width: 768px) {
@@ -276,7 +261,7 @@
         <div></div>
         <div></div>
     </div>
-    <h1> SzylenyFC </h1>
+    <h1>SzylenyFC</h1>
 </header>
 
 <nav>
@@ -299,7 +284,7 @@
     <ul>
         <li><strong>Data założenia:</strong> 2023 rok</li>
         <li><strong>Trener:</strong> Kacper Szwajczewski</li>
-        <li><strong>Stadion:</strong> Boisko przy szkole podsatwowej w Szylenach</li>
+        <li><strong>Stadion:</strong> Boisko przy szkole podstawowej w Szylenach</li>
         <li><strong>Kolory drużyny:</strong> Żółto-czarny</li>
     </ul>
 </div>
@@ -307,8 +292,8 @@
 <!-- Wyniki drużyny -->
 <div class="team-results">
     <h3>Wyniki Drużyny</h3>
-    <p><strong>SzylenyFC vs. ZKS Zakrzewiec (Sparing)</strong> -wynik: 3-9</p>
-    <p><strong>SzylenyFC vs. Ultra Promil (Sparing)</strong> -wynik: 1-6</p>
+    <p><strong>SzylenyFC vs. ZKS Zakrzewiec (Sparing)</strong> - wynik: 3-9</p>
+    <p><strong>SzylenyFC vs. Ultra Promil (Sparing)</strong> - wynik: 1-6</p>
 </div>
 
 <!-- Galeria zdjęć -->
@@ -322,7 +307,7 @@
 <!-- Sekcja Pogody -->
 <div class="weather-section">
     <h3>Prognoza Pogody</h3>
-    <p>Na nadchodzący mecz z <h3>Piekiełkiem</h3> zapowiadane jest Pochmurne niebo i temperatura 3°C. do dupy warunki do gry!</p>
+    <p>Na nadchodzący mecz z <h3>Piekiełkiem</h3> zapowiadane jest Pochmurne niebo i temperatura 3°C. Do dupy warunki do gry!</p>
 </div>
 
 <!-- Stopka -->
