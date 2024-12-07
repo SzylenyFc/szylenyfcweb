@@ -3,42 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drużyna - Szyleny FC</title>
+    <title>SzylenyFC</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            background-color: #fff;
-            color: #000;
+            padding: 0;
+            box-sizing: border-box;
         }
-        nav, footer {
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffcc00, #000);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: #ffcc00 #000;
+        }
+
+        header {
+            background: linear-gradient(to right, #000, #ffcc00);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
             background-color: #000;
             color: #fff;
-            padding: 15px 20px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: transform 0.3s;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #000;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 50px 10px;
+            transition: left 0.3s ease;
+            z-index: 1000;
         }
-        nav ul li a {
+
+        nav a {
             color: #fff;
+            padding: 15px;
             text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s, background-color 0.3s;
+            width: 100%;
+        }
+
+        nav a:hover {
+            background-color: #ffcc00;
+            color: #000;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex: 1; /* To make sure the main content takes up remaining space */
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .main-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Sekcja drużyny */
+        .team-info {
+            background-color: #fff;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .team-info p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .team-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-info ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Galeria zdjęć */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .photo-gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255, 255, 0, 0.5);
+        }
+
+        /* Wyniki drużyny */
+        .team-results {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .team-results h3 {
+            margin-top: 0;
+        }
+
+        .team-results p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Sekcja z pogodą */
+        .weather-section {
+            background-color: #fff;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .weather-section h3 {
+            margin-top: 0;
+        }
+
+        .weather-section p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Stopka */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            font-size: 14px;
+            margin-top: auto; /* Makes the footer stick to the bottom */
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                left: -100%;
+            }
+
+            nav.active {
+                left: 0;
+            }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector("nav");
+
+            toggle.addEventListener("click", () => {
+                toggle.classList.toggle("active");
+                nav.classList.toggle("active");
+            });
+        });
+    </script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Strona Główna</a></li>
-            <li><a href="druzyna.html">Drużyna</a></li>
-            <li><a href="terminarz.html">Terminarz</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-    </nav>
-    <h1>Drużyna-Statystyki</h1>
-    <p>Informacje o drużynie Szyleny FC.</p>
-    <footer>&copy; 2024 Szyleny FC</footer>
+
+<header>
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h1>SzylenyFC</h1>
+</header>
+
+<nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="druzynao.html">Drużyna</a>
+    <a href="terminarz.html">Terminarz</a>
+    <a href="historia.html">Historia</a>
+    <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<div class="main-content">
+    <h2>Witamy w SzylenyFC!</h2>
+    <p>Jesteśmy dumni, że możemy gościć Cię na naszej stronie. Śledź nasze aktualności, poznaj naszą drużynę i bądź na bieżąco z terminarzem meczów.</p>
+</div>
+
+<!-- Sekcja drużyny -->
+<div class="team-info hover-effect">
+    <h3>O SzylenyFC</h3>
+    <p>SzylenyFC to drużyna piłkarska, która powstała w 2023 roku. Jesteśmy pasjonatami futbolu, a nasza drużyna wyróżnia się nie tylko na boisku, ale i w społeczności. Celem naszej drużyny jest rozwój młodych talentów .</p>
+    <ul>
+        <li><strong>Data założenia:</strong> 2023 rok</li>
+        <li><strong>Trener:</strong> Kacper Szwajczewski</li>
+        <li><strong>Stadion:</strong> Boisko przy szkole podstawowej w Szylenach</li>
+        <li><strong>Kolory drużyny:</strong> Żółto-czarny</li>
+    </ul>
+</div>
+
+<!-- Wyniki drużyny -->
+<div class="team-results">
+    <h3>Wyniki Drużyny</h3>
+    <p><strong>SzylenyFC vs. ZKS Zakrzewiec (Sparing)</strong> - wynik: 3-9</p>
+    <p><strong>SzylenyFC vs. Ultra Promil (Sparing)</strong> - wynik: 1-6</p>
+</div>
+
+<!-- Galeria zdjęć -->
+<div class="photo-gallery">
+    <img src="z1.png" alt="Zdjęcie 1">
+    <img src="z2.png" alt="Zdjęcie 2">
+    <img src="z5.png" alt="Zdjęcie 3">
+    <img src="z6.png" alt="Zdjęcie 4">
+</div>
+
+<!-- Sekcja Pogody -->
+<div class="weather-section">
+    <h3>Prognoza Pogody</h3>
+    <p>Na nadchodzący mecz z <h3>Piekiełkiem</h3> zapowiadane jest Pochmurne niebo i temperatura 3°C. Do dupy warunki do gry!</p>
+</div>
+
+<!-- Stopka -->
+<footer>
+    <p>&copy; 2024 SzylenyFC. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
 </body>
 </html>
