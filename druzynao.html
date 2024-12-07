@@ -266,74 +266,7 @@
                 <div class="stat">Gole: <span id="goals-jacek">0</span></div>
                 <div class="stat">Asysty: <span id="assists-jacek">0</span></div>
                 <div class="stat">Atrybuty: <span id="assists-jacek"><br>  
-                    -Szybkość,<br>  
-                    -Pozycjonowanie się</span></div><br>  
-
-            </div>
-        </div>
-    </div>
-     <div class="team-member" onclick="toggleStats('jacek')">
-            <img src="z2.png" alt="Zawodnik 3">
-            <h3>Oponek</h3>
-            <p>Napastnik</p>
-            <div class="stats" id="stats-jacek">
-                <div class="stat">Gole: <span id="goals-jacek">0</span></div>
-                <div class="stat">Asysty: <span id="assists-jacek">0</span></div>
-                <div class="stat">Atrybuty: <span id="assists-jacek"><br>  
-                    -Szybkość,<br>  
-                    -Śiła</span></div><br>  
-
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Funkcja do przełączania widoczności statystyk
-        function toggleStats(player) {
-            const stats = document.getElementById(`stats-${player}`);
-            const currentlyVisible = stats.style.display === "block";
-
-            // Ukrywanie wszystkich statystyk
-            const allStats = document.querySelectorAll('.stats');
-            allStats.forEach(stat => stat.style.display = "none");
-
-            // Jeśli statystyki tego zawodnika nie były widoczne, pokazujemy je
-            if (!currentlyVisible) {
-                stats.style.display = "block";
-            }
-        }
-    </script>
-        <div class="team-member" onclick="toggleStats('jacek')">
-            <img src="z2.png" alt="Zawodnik 3">
-            <h3>Oponek</h3>
-            <p>Napastnik</p>
-            <div class="stats" id="stats-jacek">
-                <div class="stat">Gole: <span id="goals-jacek">0</span></div>
-                <div class="stat">Asysty: <span id="assists-jacek">0</span></div>
-                <div class="stat">Atrybuty: <span id="assists-jacek"><br>  
-                    -Szybkość,<br>  
-                    -Śiła</span></div><br>  
-
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Funkcja do przełączania widoczności statystyk
-        function toggleStats(player) {
-            const stats = document.getElementById(`stats-${player}`);
-            const currentlyVisible = stats.style.display === "block";
-
-            // Ukrywanie wszystkich statystyk
-            const allStats = document.querySelectorAll('.stats');
-            allStats.forEach(stat => stat.style.display = "none");
-
-            // Jeśli statystyki tego zawodnika nie były widoczne, pokazujemy je
-            if (!currentlyVisible) {
-                stats.style.display = "block";
-            }
-        }
-    </script>
+                    -Szybkość,<br
         <div class="team-member">
             <img src="z4.png" alt="Zawodnik 4">
             <h3>Lutas</h3>
