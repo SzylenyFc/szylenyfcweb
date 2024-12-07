@@ -1517,8 +1517,46 @@
 
     <br>
     
+         <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopka na dole strony</title>
+    <style>
+        /* Resetowanie marginesów i paddingu dla całej strony */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ustawienie dla ciała strony: flexbox w kierunku kolumny */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Ustawienia dla stopki */
+        footer {
+            margin-top: auto; /* Przykleja stopkę do dołu */
+            text-align: center; /* Centruje tekst w stopce */
+            padding: 10px;
+            background-color: #333; /* Kolor tła */
+            color: white; /* Kolor tekstu */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Zawartość strony (przykładowa) -->
+    <div>
+        <h1>Witamy na stronie Szyleny FC!</h1>
+        <p>Ta strona jest przykładem, jak przykleić stopkę do dołu.</p>
+    </div>
+
+    <!-- Stopka -->
     <footer>
-        &copy; 2024 Szyleny FC. Wszystkie prawa zastrzeżone.
-    </footer>
+        &copy; 202
 </body>
 </html>
