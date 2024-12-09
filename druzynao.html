@@ -27,19 +27,80 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: transform 0.3s;
+        }
+
+        .menu-toggle.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
         }
 
         nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 250px;
+            height: 100%;
             background-color: #000;
-            padding: 10px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 50px 10px;
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+
+        nav.active {
+            right: 0;
         }
 
         nav a {
             color: #fff;
-            padding: 10px 15px;
+            padding: 15px;
             text-decoration: none;
+            text-transform: uppercase;
             font-weight: bold;
+            transition: color 0.3s, background-color 0.3s;
+            width: 100%;
+        }
+
+        nav a:hover {
+            background-color: #ffcc00;
+            color: #000;
+            border-radius: 5px;
+            transform: scale(1.05);
         }
 
         .team-section {
@@ -91,12 +152,41 @@
             text-decoration: none;
             color: inherit;
         }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector("nav");
+
+            toggle.addEventListener("click", () => {
+                toggle.classList.toggle("active");
+                nav.classList.toggle("active");
+            });
+        });
+    </script>
 </head>
 <body>
 
 <header>
     <h1>Drużyna - SzylenyFC</h1>
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 
 <nav>
@@ -106,89 +196,88 @@
     <a href="kontakt.html">Kontakt</a>
 </nav>
 
-<!-- Sekcja drużyny -->
 <div class="team-section">
     <h2>Nasza Drużyna</h2>
     <div class="team-members">
         <div class="team-member">
-            <a href="#faja">
+            <a href="faja.html">
                 <img src="z2.png" alt="Faja">
                 <h3>Faja</h3>
                 <p>Kapitan drużyny</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#oponek">
+            <a href="oponek.html">
                 <img src="z1.png" alt="Oponek">
                 <h3>Oponek</h3>
                 <p>Napastnik</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#igor">
+            <a href="igor.html">
                 <img src="z3.png" alt="Igor">
                 <h3>Igor</h3>
                 <p>Skrzydłowy</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#lutas">
+            <a href="lutas.html">
                 <img src="z4.png" alt="Łutas">
                 <h3>Łutas</h3>
                 <p>Skrzydłowy</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#kucina">
+            <a href="kucina.html">
                 <img src="z5.png" alt="Kucina">
                 <h3>Kucina</h3>
                 <p>Skrzydłowy</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#natan">
+            <a href="natan.html">
                 <img src="z6.png" alt="Natan">
                 <h3>Natan</h3>
                 <p>Pomocnik</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#zulik">
+            <a href="zulik.html">
                 <img src="z10.png" alt="Żulik">
                 <h3>Żulik</h3>
                 <p>Obrońca</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#fryta">
+            <a href="fryta.html">
                 <img src="z11.png" alt="Fryta">
                 <h3>Fryta</h3>
                 <p>Obrońca</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#dejwid">
+            <a href="dejwid.html">
                 <img src="z12.png" alt="Dejwid">
                 <h3>Dejwid</h3>
                 <p>Obrońca</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#kalata">
+            <a href="kalata.html">
                 <img src="z9.png" alt="Kalata">
                 <h3>Kalata</h3>
                 <p>Obrońca</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#zgieras">
+            <a href="zgieras.html">
                 <img src="z8.png" alt="Zgieras">
                 <h3>Zgieras</h3>
                 <p>Bramkarz</p>
             </a>
         </div>
         <div class="team-member">
-            <a href="#smujkis">
+            <a href="smujkis.html">
                 <img src="z7.png" alt="Smujkis">
                 <h3>Smujkis</h3>
                 <p>Bramkarz</p>
