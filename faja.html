@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statystyki Zawodnika - Faja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffcc00, #000);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #000, #ffcc00);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .player-section {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .player-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .player-info {
+            flex: 1;
+            margin-left: 30px;
+        }
+
+        .player-info h1 {
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        .player-info p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .stats-section {
+            margin-top: 30px;
+        }
+
+        .stats-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stats-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stats-card p {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            background-color: #ffcc00;
+            color: #000;
+            font-size: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #000;
+            color: #fff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Statystyki Zawodnika - Faja</h1>
+</header>
+
+<div class="player-section">
+    <div class="player-header">
+        <img src="z2.png" alt="Faja">
+        <div class="player-info">
+            <h1>Faja</h1>
+            <p><strong>Pozycja:</strong> Kapitan drużyny</p>
+            <p><strong>Wiek:</strong> 25 lat</p>
+            <p><strong>Doświadczenie:</strong> 10 lat w piłce nożnej</p>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stats-card">
+            <h3>Gole</h3>
+            <p>25</p>
+        </div>
+        <div class="stats-card">
+            <h3>Asysty</h3>
+            <p>15</p>
+        </div>
+        <div class="stats-card">
+            <h3>Występy</h3>
+            <p>50</p>
+        </div>
+        <div class="stats-card">
+            <h3>Żółte kartki</h3>
+            <p>3</p>
+        </div>
+        <div class="stats-card">
+            <h3>Czerwone kartki</h3>
+            <p>0</p>
+        </div>
+    </div>
+
+    <a href="team.html" class="back-button">Wróć do drużyny</a>
+</div>
+
+</body>
+</html>
