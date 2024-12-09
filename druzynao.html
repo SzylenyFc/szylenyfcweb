@@ -16,8 +16,6 @@
             background: linear-gradient(135deg, #ffcc00, #000);
             color: #333;
             overflow-y: scroll;
-            scrollbar-width: thin;
-            scrollbar-color: #ffcc00 #000;
         }
 
         header {
@@ -31,73 +29,19 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-        .menu-toggle {
-            display: none;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #000;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .menu-toggle div {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 5px 0;
-            transition: transform 0.3s;
-        }
-
-        .menu-toggle.active div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .menu-toggle.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
             background-color: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding: 50px 10px;
-            transition: left 0.3s ease;
-            z-index: 1000;
+            padding: 10px;
+            text-align: center;
         }
 
         nav a {
             color: #fff;
-            padding: 15px;
+            padding: 10px 15px;
             text-decoration: none;
-            text-transform: uppercase;
             font-weight: bold;
-            transition: color 0.3s, background-color 0.3s;
-            width: 100%;
         }
 
-        nav a:hover {
-            background-color: #ffcc00;
-            color: #000;
-            border-radius: 5px;
-            transform: scale(1.05);
-        }
-
-        /* Sekcja drużyny */
         .team-section {
             padding: 40px;
             margin: 20px auto;
@@ -105,30 +49,11 @@
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .team-section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .team-section p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
             text-align: center;
         }
 
@@ -152,7 +77,6 @@
 
         .team-member:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .team-member img {
@@ -163,89 +87,20 @@
             margin-bottom: 15px;
         }
 
-        .team-member h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .team-member p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .achievements {
-            background-color: #fff;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 900px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .achievements h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .achievements ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .achievements ul li {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #000;
-            color: #fff;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                left: -100%;
-            }
-
-            nav.active {
-                left: 0;
-            }
+        .team-member a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggle = document.querySelector(".menu-toggle");
-            const nav = document.querySelector("nav");
-
-            toggle.addEventListener("click", () => {
-                toggle.classList.toggle("active");
-                nav.classList.toggle("active");
-            });
-        });
-    </script>
 </head>
 <body>
 
 <header>
-    <div class="menu-toggle">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
     <h1>Drużyna - SzylenyFC</h1>
 </header>
 
 <nav>
     <a href="index.html">Strona Główna</a>
-    <a href="index.html">Drużyna</a>
     <a href="terminarz.html">Terminarz</a>
     <a href="historia.html">Historia</a>
     <a href="kontakt.html">Kontakt</a>
@@ -254,93 +109,94 @@
 <!-- Sekcja drużyny -->
 <div class="team-section">
     <h2>Nasza Drużyna</h2>
-    <p>Nasza drużyna składa się z pasjonatów piłki nożnej, którzy od lat trenują i grają razem. Poznaj naszych zawodników oraz osiągnięcia drużyny.</p>
-
-    <!-- Członkowie drużyny -->
     <div class="team-members">
         <div class="team-member">
-            <img src="z2.png" alt="Zawodnik 1">
-            <h3>Faja</h3>
-            <p>Kapitan drużyny</p>
+            <a href="#faja">
+                <img src="z2.png" alt="Faja">
+                <h3>Faja</h3>
+                <p>Kapitan drużyny</p>
+            </a>
         </div>
         <div class="team-member">
-            <img src="z1.png" alt="Zawodnik 2">
-            <h3>Oponek</h3>
-            <p>Napastnik</p>
+            <a href="#oponek">
+                <img src="z1.png" alt="Oponek">
+                <h3>Oponek</h3>
+                <p>Napastnik</p>
+            </a>
         </div>
         <div class="team-member">
-            <img src="z3.png" alt="Zawodnik 3">
-            <h3>Igor</h3>
-            <p>Szkrzydłowy</p>
+            <a href="#igor">
+                <img src="z3.png" alt="Igor">
+                <h3>Igor</h3>
+                <p>Skrzydłowy</p>
+            </a>
         </div>
         <div class="team-member">
-            <img src="z4.png" alt="Zawodnik 4">
-            <h3>Łutas</h3>
-            <p>Szkrzydłowy</p>
+            <a href="#lutas">
+                <img src="z4.png" alt="Łutas">
+                <h3>Łutas</h3>
+                <p>Skrzydłowy</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z5.png" alt="Zawodnik 4">
-            <h3>Kucina</h3>
-            <p>Szkrzydłowy</p>
+        <div class="team-member">
+            <a href="#kucina">
+                <img src="z5.png" alt="Kucina">
+                <h3>Kucina</h3>
+                <p>Skrzydłowy</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z6.png" alt="Zawodnik 4">
-            <h3>Natan</h3>
-            <p>Pomocnik</p>
+        <div class="team-member">
+            <a href="#natan">
+                <img src="z6.png" alt="Natan">
+                <h3>Natan</h3>
+                <p>Pomocnik</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z10.png" alt="Zawodnik 4">
-            <h3>Żulik</h3>
-            <p>Obrońca</p>
+        <div class="team-member">
+            <a href="#zulik">
+                <img src="z10.png" alt="Żulik">
+                <h3>Żulik</h3>
+                <p>Obrońca</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z11.png" alt="Zawodnik 4">
-            <h3>Fryta</h3>
-            <p>Obrońca</p>
+        <div class="team-member">
+            <a href="#fryta">
+                <img src="z11.png" alt="Fryta">
+                <h3>Fryta</h3>
+                <p>Obrońca</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z12.png" alt="Zawodnik 4">
-            <h3>Dejwid</h3>
-            <p>Obrońca</p>
+        <div class="team-member">
+            <a href="#dejwid">
+                <img src="z12.png" alt="Dejwid">
+                <h3>Dejwid</h3>
+                <p>Obrońca</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z9.png" alt="Zawodnik 4">
-            <h3>Kalata</h3>
-            <p>Obrońca</p>
+        <div class="team-member">
+            <a href="#kalata">
+                <img src="z9.png" alt="Kalata">
+                <h3>Kalata</h3>
+                <p>Obrońca</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z8.png" alt="Zawodnik 4">
-            <h3>Zgieras</h3>
-            <p>Bramkarz</p>
+        <div class="team-member">
+            <a href="#zgieras">
+                <img src="z8.png" alt="Zgieras">
+                <h3>Zgieras</h3>
+                <p>Bramkarz</p>
+            </a>
         </div>
-         <div class="team-member">
-            <img src="z7.png" alt="Zawodnik 4">
-            <h3>Smujkis</h3>
-            <p>Bramkarz</p>
+        <div class="team-member">
+            <a href="#smujkis">
+                <img src="z7.png" alt="Smujkis">
+                <h3>Smujkis</h3>
+                <p>Bramkarz</p>
+            </a>
         </div>
     </div>
 </div>
 
-<!-- Osiągnięcia drużyny -->
-<div class="achievements">
-    <h3>Nasze Osiągnięcia</h3>
-    <ul>
-        
-        <li><strong>Puchar Ligi: </strong> ?</li>
-        <li><strong>udział w tueniewju gminnym:</strong> 2023</li>
-        <li><strong>Najlepszy Trener:</strong> Kacper Szwajczewski 2023</li>
-    </ul>
-</div>
-
-<!-- Stopka -->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 <footer>
     <p>&copy; 2024 SzylenyFC. Wszelkie prawa zastrzeżone.</p>
 </footer>
