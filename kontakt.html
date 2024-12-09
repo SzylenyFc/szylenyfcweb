@@ -42,6 +42,15 @@
             animation: slideInFromTop 0.5s ease-out;
         }
 
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
         .menu-toggle {
             display: none;
             position: absolute;
@@ -54,6 +63,23 @@
             cursor: pointer;
             z-index: 1001;
             animation: slideInFromLeft 0.5s ease-out;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: transform 0.3s;
         }
 
         nav {
@@ -82,17 +108,241 @@
             width: 100%;
         }
 
-        .follower-count {
-            font-size: 1.5rem;
+        nav a:hover {
+            background-color: #ffcc00;
+            color: #000;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .main-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Sekcja drużyny */
+        .team-info {
+            background-color: #fff;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .team-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .team-info p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .team-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-info ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .hover-effect {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Galeria zdjęć */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1200px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .photo-gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255, 255, 0, 0.5);
+        }
+
+        /* Sekcja Historia Klubu */
+        .history {
+            background-color: #fff;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .history h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .history p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Sekcja Kontakt */
+        .contact {
+            background-color: #fff;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .contact h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .contact a {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
-            color: #ffcc00;
+            transition: background-color 0.3s;
             margin-top: 10px;
+        }
+
+        .contact a:hover {
+            background-color: #ff9900;
+        }
+
+        /* Terminarz */
+        .schedule {
+            background-color: #fff;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .schedule h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule table th, .schedule table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .schedule table th {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        .schedule table td {
+            background-color: #f9f9f9;
+        }
+
+        .schedule table tr:nth-child(even) td {
+            background-color: #f1f1f1;
+        }
+
+        /* Stopka */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            font-size: 14px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                left: -100%;
+            }
+
+            nav.active {
+                left: 0;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <h1>SzylenyFC - Kontakt</h1>
 </header>
 
@@ -104,36 +354,76 @@
     <a href="kontakt.html">Kontakt</a>
 </nav>
 
+<div class="main-content">
+    <h2>Witamy w SzylenyFC!</h2>
+    <p>Jesteśmy dumni, że możemy gościć Cię na naszej stronie. Śledź nasze aktualności, poznaj naszą drużynę i bądź na bieżąco z terminarzem meczów.</p>
+</div>
+
 <!-- Sekcja Kontakt -->
 <div class="contact">
     <h3>Kontakt</h3>
     <p>Chcesz się z nami skontaktować? Oto nasze dane kontaktowe:</p>
     <p><strong>Instagram drużynowy:</strong> <a href="https://www.instagram.com/szylenyfc" target="_blank">szylenyfc</a></p>
     <p><strong>Email prezesa:</strong> <a href="mailto:41kacper414@gmail.com">41kacper414@gmail.com</a></p>
-
-    <p class="follower-count">Liczba obserwujących na Instagramie: <span id="instagram-followers">Ładowanie...</span></p>
 </div>
 
-<script>
-    // Funkcja do pobrania liczby obserwujących z Instagrama
-    async function fetchInstagramFollowers() {
-        const username = 'szylenyfc'; // Zmienna z nazwą użytkownika
-        const apiUrl = `https://www.instagram.com/${username}/?__a=1`;
+<!-- Sekcja Terminarz -->
+<div class="schedule">
+    <h3>Terminarz Meczów</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Przeciwnik</th>
+                <th>Godzina</th>
+                <th>Stadion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8 grudnia 2024</td>
+                <td>PIEKIEŁKO</td>
+                <td>19:00</td>
+                <td>sp5</td>
+            </tr>
+            <tr>
+                <td>13 grudnia 2024</td>
+                <td>ŻUBRUWKA</td>
+                <td>19:00</td>
+                <td>sp5</td>
+            </tr>
+            <tr>
+                <td>14 grudnia 2024</td>
+                <td>ULTRA PROMIL</td>
+                <td>16:00</td>
+                <td>sp5</td>
+            </tr>
+            <tr>
+                <td>20 grudnia 2024</td>
+                <td>83 PROBLEM</td>
+                <td>19:00</td>
+                <td>sp5</td>
+            </tr>
+            <tr>
+                <td>21 grudnia 2024</td>
+                <td>POMPA</td>
+                <td>16:00</td>
+                <td>sp5</td>
+            </tr>
+            <tr>
+                <td>24 stycznia 2025</td>
+                <td>MUDRYK</td>
+                <td>19:00</td>
+                <td>sp5</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-        try {
-            const response = await fetch(apiUrl);
-            const data = await response.json();
-            const followersCount = data.graphql.user.edge_followed_by.count;
-            document.getElementById('instagram-followers').textContent = followersCount;
-        } catch (error) {
-            console.error('Błąd pobierania danych:', error);
-            document.getElementById('instagram-followers').textContent = 'Nie udało się pobrać danych.';
-        }
-    }
-
-    // Wywołanie funkcji po załadowaniu strony
-    window.onload = fetchInstagramFollowers;
-</script>
+<!-- Stopka -->
+<footer>
+    <p>&copy; 2024 SzylenyFC. Wszelkie prawa zastrzeżone.</p>
+</footer>
 
 </body>
 </html>
