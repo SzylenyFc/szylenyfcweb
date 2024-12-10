@@ -37,31 +37,128 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
+        .player-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .player-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .player-info {
+            flex: 1;
+            margin-left: 30px;
+        }
+
+        .player-info h1 {
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        .player-info p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             margin: 20px 0;
+        }
+
+        .gallery-item-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
         }
 
         .gallery-item {
             width: 100%;
-            height: 100px;
+            height: 100%;
             object-fit: cover;
             border-radius: 10px;
             border: 1px solid #ccc;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s;
         }
 
         .gallery-item:hover {
             transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .gallery-item:active {
-            transform: scale(0.95);
+        .gallery-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            border-radius: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item-container:hover .gallery-text {
+            opacity: 1;
+        }
+
+        .stats-section {
+            margin-top: 30px;
+        }
+
+        .stats-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stats-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stats-card p {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            background-color: #ffcc00;
+            color: #000;
+            font-size: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #000;
+            color: #fff;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -72,11 +169,55 @@
 </header>
 
 <div class="player-section">
-    <div class="gallery">
-        <img src="pozycjonowanie.png" alt="Zdjęcie 1" class="gallery-item">
-        <img src="tempo.png" alt="Zdjęcie 2" class="gallery-item">
-        <img src="powershot.png" alt="Zdjęcie 3" class="gallery-item">
+    <div class="player-header">
+        <img src="z2.png" alt="Faja">
+        <div class="player-info">
+            <h1>Faja</h1>
+            <p><strong>Pozycja:</strong> Skrzydłowy</p>
+            <p><strong>Wiek:</strong> 17 lat</p>
+            <p><strong>Doświadczenie:</strong> 10 lat w piłce nożnej</p>
+        </div>
     </div>
+
+    <div class="gallery">
+        <div class="gallery-item-container">
+            <img src="pozycjonowanie.png" alt="Zdjęcie 1" class="gallery-item">
+            <div class="gallery-text">Pozycjonowanie</div>
+        </div>
+        <div class="gallery-item-container">
+            <img src="tempo.png" alt="Zdjęcie 2" class="gallery-item">
+            <div class="gallery-text">Tempo</div>
+        </div>
+        <div class="gallery-item-container">
+            <img src="powershot.png" alt="Zdjęcie 3" class="gallery-item">
+            <div class="gallery-text">Power Shot</div>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stats-card">
+            <h3>Gole</h3>
+            <p>0</p>
+        </div>
+        <div class="stats-card">
+            <h3>Asysty</h3>
+            <p>0</p>
+        </div>
+        <div class="stats-card">
+            <h3>Występy</h3>
+            <p>0</p>
+        </div>
+        <div class="stats-card">
+            <h3>Żółte kartki</h3>
+            <p>0</p>
+        </div>
+        <div class="stats-card">
+            <h3>Czerwone kartki</h3>
+            <p>0</p>
+        </div>
+    </div>
+
+    <a href="druzynao.html" class="back-button">Wróć do drużyny</a>
 </div>
 
 </body>
