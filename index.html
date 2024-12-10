@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SzylenyFC</title>
+    <meta name="google-adsense-account" content="ca-pub-6176714656954651">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector("nav");
+
+            toggle.addEventListener("click", () => {
+                toggle.classList.toggle("active");
+                nav.classList.toggle("active");
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h1>SzylenyFC</h1>
+</header>
+
+<nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="druzynao.html">Drużyna</a>
+    <a href="terminarz.html">Terminarz</a>
+    <a href="historia.html">Historia</a>
+    <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<!-- Sekcja główna -->
+<div class="main-content">
+    <h2>Witamy w SzylenyFC!</h2>
+    <p>Jesteśmy dumni, że możemy gościć Cię na naszej stronie. Śledź nasze aktualności, poznaj naszą drużynę i bądź na bieżąco z terminarzem meczów.</p>
+
+    <!-- Sekcja drużyny -->
+    <div class="team-info hover-effect">
+        <h3>O SzylenyFC</h3>
+        <p>SzylenyFC to drużyna piłkarska, która powstała w 2023 roku. Jesteśmy pasjonatami futbolu, a nasza drużyna wyróżnia się nie tylko na boisku, ale i w społeczności. Celem naszej drużyny jest rozwój młodych talentów.</p>
+        <ul>
+            <li><strong>Data założenia:</strong> 2023 rok</li>
+            <li><strong>Trener:</strong> Kacper Wójcik</li>
+            <li><strong>Stadion:</strong> Boisko przy Szkole Podstawowej w Szylenach</li>
+            <li><strong>Kolory drużyny:</strong> Żółto-czarny</li>
+        </ul>
+    </div>
+
+    <!-- Wyniki drużyny -->
+    <div class="team-results">
+        <h3>Wyniki Drużyny</h3>
+        <p><strong>SzylenyFC vs. ZKS Zakrzewiec (Sparing)</strong> - wynik: 3-9</p>
+        <p><strong>SzylenyFC vs. Ultra Promil (Sparing)</strong> - wynik: 1-6</p>
+        <p><strong>SzylenyFC vs. Piekiełko </strong> - wynik: 6-3</p>
+    </div>
+
+    <!-- Galeria zdjęć -->
+    <div class="photo-gallery">
+        <img src="z1.png" alt="Zdjęcie 1">
+        <img src="z2.png" alt="Zdjęcie 2">
+        <img src="z5.png" alt="Zdjęcie 3">
+        <img src="z6.png" alt="Zdjęcie 4">
+    </div>
+
+    <!-- Sekcja Pogody -->
+    <div class="weather-section">
+        <h3>Prognoza Pogody</h3>
+        <p>Na nadchodzący mecz z <h3>Żubrówką</h3> zapowiadane jest Pochmurne niebo i temperatura -2°C. Do dupy warunki do gry!</p>
+    </div>
+</div>
+
+<!-- Stopka -->
+<footer>
+    <p>&copy; 2024 SzylenyFC. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+</body>
+</html>
