@@ -38,12 +38,57 @@
             text-align: center;
         }
 
+        .player-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .player-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .player-info {
+            flex: 1;
+            margin-left: 30px;
+        }
+
+        .player-info h1 {
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        .player-info p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
         .stats-section {
+            margin-top: 30px;
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
 
         .stats-card {
@@ -118,6 +163,22 @@
 </header>
 
 <div class="player-section">
+    <div class="player-header">
+        <img src="z2.png" alt="Faja">
+        <div class="player-info">
+            <h1>Faja</h1>
+            <p><strong>Pozycja:</strong> Skrzydłowy</p>
+            <p><strong>Wiek:</strong> 17 lat</p>
+            <p><strong>Doświadczenie:</strong> 10 lat w piłce nożnej</p>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="pozycjonowanie.png" alt="Zdjęcie 1" class="gallery-item">
+        <img src="tempo.png" alt="Zdjęcie 2" class="gallery-item">
+        <img src="powershot.png" alt="Zdjęcie 3" class="gallery-item">
+    </div>
+
     <div class="stats-section">
         <div class="stats-card" data-attribute="Gole">
             <h3>Gole</h3>
