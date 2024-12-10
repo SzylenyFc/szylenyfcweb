@@ -66,6 +66,22 @@
             margin: 10px 0;
         }
 
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
         .stats-section {
             margin-top: 30px;
         }
@@ -129,6 +145,15 @@
             <p><strong>Wiek:</strong> 17 lat</p>
             <p><strong>Doświadczenie:</strong> 10 lat w piłce nożnej</p>
         </div>
+    </div>
+
+    <div class="gallery">
+        <img src="image1.png" alt="Zdjęcie 1" class="gallery-item">
+        <img src="image2.png" alt="Zdjęcie 2" class="gallery-item">
+        <img src="image3.png" alt="Zdjęcie 3" class="gallery-item">
+        <img src="image4.png" alt="Zdjęcie 4" class="gallery-item">
+        <img src="image5.png" alt="Zdjęcie 5" class="gallery-item">
+        <img src="image6.png" alt="Zdjęcie 6" class="gallery-item">
     </div>
 
     <div class="stats-section">
