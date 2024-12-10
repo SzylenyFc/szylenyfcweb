@@ -37,82 +37,31 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .stats-section {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin: 20px 0;
         }
 
-        .stats-card {
-            position: relative;
-            width: 150px;
+        .gallery-item {
+            width: 100%;
             height: 100px;
-            background-color: #fff;
-            padding: 20px;
+            object-fit: cover;
             border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .stats-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .stats-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .stats-card p {
-            font-size: 1.2rem;
-        }
-
-        .stats-card::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            font-size: 1.2rem;
-            color: #000;
-            background-color: #ffcc00;
-            padding: 10px 15px;
-            border-radius: 5px;
+            border: 1px solid #ccc;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: transform 0.5s ease, opacity 0.5s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .stats-card:focus::after,
-        .stats-card:hover::after {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
+        .gallery-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .back-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 25px;
-            background-color: #ffcc00;
-            color: #000;
-            font-size: 1.2rem;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
+        .gallery-item:active {
+            transform: scale(0.95);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #000;
-            color: #fff;
-            transform: scale(1.05);
         }
     </style>
 </head>
@@ -123,30 +72,11 @@
 </header>
 
 <div class="player-section">
-    <div class="stats-section">
-        <div class="stats-card" data-text="Gole">
-            <h3>Gole</h3>
-            <p>0</p>
-        </div>
-        <div class="stats-card" data-text="Asysty">
-            <h3>Asysty</h3>
-            <p>0</p>
-        </div>
-        <div class="stats-card" data-text="Występy">
-            <h3>Występy</h3>
-            <p>0</p>
-        </div>
-        <div class="stats-card" data-text="Żółte kartki">
-            <h3>Żółte kartki</h3>
-            <p>0</p>
-        </div>
-        <div class="stats-card" data-text="Czerwone kartki">
-            <h3>Czerwone kartki</h3>
-            <p>0</p>
-        </div>
+    <div class="gallery">
+        <img src="pozycjonowanie.png" alt="Zdjęcie 1" class="gallery-item">
+        <img src="tempo.png" alt="Zdjęcie 2" class="gallery-item">
+        <img src="powershot.png" alt="Zdjęcie 3" class="gallery-item">
     </div>
-
-    <a href="druzynao.html" class="back-button">Wróć do drużyny</a>
 </div>
 
 </body>
