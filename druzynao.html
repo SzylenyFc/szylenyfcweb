@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drużyna - SzylenyFC</title>
-    <style>        
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
+            display: flex;
+            flex-direction: column;
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ffcc00, #000);
             color: #333;
@@ -198,12 +204,17 @@
             margin: 10px 0;
         }
 
+        main {
+            flex: 1;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
             background-color: #000;
             color: #fff;
             font-size: 14px;
+            margin-top: auto;
         }
 
         @media (max-width: 768px) {
@@ -251,109 +262,66 @@
     <a href="kontakt.html">Kontakt</a>
 </nav>
 
-<!-- Sekcja drużyny -->
-<div class="team-section">
-    <h2>Nasza Drużyna</h2>
-    <p>Nasza drużyna składa się z pasjonatów piłki nożnej, którzy od lat trenują i grają razem. Poznaj naszych zawodników oraz osiągnięcia drużyny.</p>
+<main>
+    <div class="team-section">
+        <h2>Nasza Drużyna</h2>
+        <p>Nasza drużyna składa się z pasjonatów piłki nożnej, którzy od lat trenują i grają razem. Poznaj naszych zawodników oraz osiągnięcia drużyny.</p>
 
-    <!-- Członkowie drużyny -->
-    <div class="team-members">
-        <div class="team-member">
-            <a href="faja.html">
-                <img src="z2.png" alt="Zawodnik 1">
-                <h3>Faja</h3>
-                <p>Kapitan drużyny</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="oponek.html">
-                <img src="z1.png" alt="Zawodnik 2">
-                <h3>Oponek</h3>
-                <p>Napastnik</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="igor.html">
-                <img src="z3.png" alt="Zawodnik 3">
-                <h3>Igor</h3>
-                <p>Skrzydłowy</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="lutas.html">
-                <img src="z4.png" alt="Zawodnik 4">
-                <h3>Lutas</h3>
-                <p>Skrzydłowy</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="kucina.html">
-                <img src="z5.png" alt="Zawodnik 5">
-                <h3>Kucina</h3>
-                <p>Skrzydłowy</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="natan.html">
-                <img src="z6.png" alt="Zawodnik 6">
-                <h3>Natan</h3>
-                <p>Pomocnik</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="zulik.html">
-                <img src="z10.png" alt="Zawodnik 7">
-                <h3>Żulik</h3>
-                <p>Obrońca</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="fryta.html">
-                <img src="z11.png" alt="Zawodnik 8">
-                <h3>Fryta</h3>
-                <p>Obrońca</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="dejwid.html">
-                <img src="z12.png" alt="Zawodnik 9">
-                <h3>Dejwid</h3>
-                <p>Obrońca</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="kalata.html">
-                <img src="z9.png" alt="Zawodnik 10">
-                <h3>Kalata</h3>
-                <p>Obrońca</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="zgieras.html">
-                <img src="z8.png" alt="Zawodnik 11">
-                <h3>Zgieras</h3>
-                <p>Bramkarz</p>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="smujkis.html">
-                <img src="z7.png" alt="Zawodnik 12">
-                <h3>Smujkis</h3>
-                <p>Bramkarz</p>
-            </a>
+        <div class="team-members">
+            <div class="team-member">
+                <a href="faja.html">
+                    <img src="z2.png" alt="Faja">
+                    <h3>Faja</h3>
+                    <p>Kapitan drużyny</p>
+                </a>
+            </div>
+            <div class="team-member">
+                <a href="oponek.html">
+                    <img src="z1.png" alt="Oponek">
+                    <h3>Oponek</h3>
+                    <p>Napastnik</p>
+                </a>
+            </div>
+            <div class="team-member">
+                <a href="igor.html">
+                    <img src="z3.png" alt="Igor">
+                    <h3>Igor</h3>
+                    <p>Skrzydłowy</p>
+                </a>
+            </div>
+            <div class="team-member">
+                <a href="lutas.html">
+                    <img src="z4.png" alt="Lutas">
+                    <h3>Lutas</h3>
+                    <p>Skrzydłowy</p>
+                </a>
+            </div>
+            <div class="team-member">
+                <a href="kucina.html">
+                    <img src="z5.png" alt="Kucina">
+                    <h3>Kucina</h3>
+                    <p>Skrzydłowy</p>
+                </a>
+            </div>
+            <div class="team-member">
+                <a href="natan.html">
+                    <img src="z6.png" alt="Natan">
+                    <h3>Natan</h3>
+                    <p>Pomocnik</p>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Osiągnięcia drużyny -->
-<div class="achievements">
-    <h3>Nasze Osiągnięcia</h3>
-    <ul>
-        <li><strong>Puchar Ligi: </strong> ?</li>
-        <li><strong>Udział w turnieju gminnym:</strong> 2023</li>
-        <li><strong>Najlepszy Trener:</strong> Kacper Szwajczewski 2023</li>
-    </ul>
-</div>
+    <div class="achievements">
+        <h3>Nasze Osiągnięcia</h3>
+        <ul>
+            <li><strong>Puchar Ligi:</strong> ?</li>
+            <li><strong>Udział w turnieju gminnym:</strong> 2023</li>
+            <li><strong>Najlepszy Trener:</strong> Kacper Szwajczewski 2023</li>
+        </ul>
+    </div>
+</main>
 
 <footer>
     <p>&copy; 2024 SzylenyFC. Wszelkie prawa zastrzeżone.</p>
